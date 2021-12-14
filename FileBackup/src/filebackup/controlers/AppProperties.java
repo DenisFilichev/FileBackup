@@ -21,9 +21,9 @@ public class AppProperties {
     private AppProperties () {
         appFile = new File("app.prop");
         properties = new Properties();
-        if(!appFile.exists()) try {
-            appFile.createNewFile();
-            properties.load(new FileReader(appFile));
+        try {
+        if(!appFile.exists()) appFile.createNewFile();
+        properties.load(new FileReader(appFile));
         } catch (IOException ex) {}
         
     }

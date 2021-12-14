@@ -16,25 +16,17 @@ import javax.swing.*;
  * @author denis
  */
 public class MainFrame extends JFrame{
-    AppProperties appProperties = AppProperties.getAppProperties();
+    AppProperties appProperties;
     
     public MainFrame(){
          super("File backup");
+         
+         appProperties = AppProperties.getAppProperties();
+         
          initFrame();
          
          
-        setDefaultCloseOperation(DO_NOTHING_ON_CLOSE);
-        addWindowListener(new WindowAdapter() {
-            @Override
-            public void windowClosing(WindowEvent e) {
-                appProperties.setProperty("width", Integer.toString(getWidth()));
-                appProperties.setProperty("height", Integer.toString(getHeight()));
-                appProperties.setProperty("locationX", Integer.toString(getX()));
-                appProperties.setProperty("locationY", Integer.toString(getY()));
-                System.exit(1);
-            }
-            
-        });
+        
          setVisible(true);
     }
     
@@ -45,5 +37,16 @@ public class MainFrame extends JFrame{
         int locationX = Integer.parseInt(appProperties.getValue("locationX", "50"));
         int locationY = Integer.parseInt(appProperties.getValue("locationY", "50"));
         setLocation(locationX, locationY);
+        setDefaultCloseOperation(DO_NOTHING_ON_CLOSE);
+        addWindowListener(new WindowAdapter() {
+            @Override
+            public void windowClosing(WindowEvent e) {
+                appProperties.setProperty("width", Integer.toString(getWidth()));
+                appProperties.setProperty("height", Integer.toString(getHeight()));
+                appProperties.setProperty("locationX", Integer.toString(getX()));
+                appProperties.setProperty("locationY", Integer.toString(getY()));
+                dispose();
+            }
+        });
     }
 }
