@@ -6,9 +6,9 @@
 package filebackup.views;
 
 import filebackup.controlers.*;
-import java.awt.Dimension;
-import java.awt.event.WindowAdapter;
-import java.awt.event.WindowEvent;
+import filebackup.model.Profile;
+import java.awt.*;
+import java.awt.event.*;
 import javax.swing.*;
 
 /**
@@ -25,8 +25,6 @@ public class MainFrame extends JFrame{
          
          initFrame();
          
-         
-        
          setVisible(true);
     }
     
@@ -48,5 +46,21 @@ public class MainFrame extends JFrame{
                 dispose();
             }
         });
+        
+        setJMenuBar(menubar());
+    }
+    
+    private JMenuBar menubar(){
+        JMenuBar bar = new JMenuBar();
+        add(bar);
+        JMenu menu = new JMenu("Tools");
+        bar.add(menu);
+        JMenuItem item1 = new JMenuItem("set origDir");
+        menu.add(item1);
+        item1.addActionListener(new SelectDir(this, new Profile("Denis"), SelectDir.origDir));
+        JMenuItem item2 = new JMenuItem("set copyDir");
+        menu.add(item2);
+        item1.addActionListener(new SelectDir(this, new Profile("Denis"), SelectDir.copyDir));
+        return bar;
     }
 }
