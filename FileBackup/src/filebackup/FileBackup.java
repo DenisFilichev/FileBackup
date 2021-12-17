@@ -6,6 +6,8 @@
 package filebackup;
 
 import filebackup.views.MainFrame;
+import filebackup.model.*;
+import java.util.List;
 
 /**
  *
@@ -18,6 +20,13 @@ public class FileBackup {
      */
     public static void main(String[] args) {
         MainFrame mainFrame = new MainFrame();
+        
+        List<Profile> list = Profile.getListProfile();
+        Profile profile = new Profile();
+        System.out.println(profile);
+        //profile.addProfile();
+        list = Profile.getListProfile();
+        System.out.println("List = " + list);
     }
     
 }
