@@ -57,10 +57,10 @@ public class MainFrame extends JFrame{
         bar.add(menu);
         JMenuItem item1 = new JMenuItem("set origDir");
         menu.add(item1);
-        item1.addActionListener(new SelectDir(this, new Profile("Denis"), SelectDir.origDir));
+        item1.addActionListener(new SelectDir(this, null, SelectDir.origDir));
         JMenuItem item2 = new JMenuItem("set copyDir");
         menu.add(item2);
-        item1.addActionListener(new SelectDir(this, new Profile("Denis"), SelectDir.copyDir));
+        item2.addActionListener(new SelectDir(this, null, SelectDir.copyDir));
         return bar;
     }
 }

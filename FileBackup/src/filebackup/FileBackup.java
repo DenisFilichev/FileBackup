@@ -22,8 +22,8 @@ public class FileBackup {
         MainFrame mainFrame = new MainFrame();
         
         List<Profile> list = Profile.getListProfile();
-        Profile profile = new Profile();
-        System.out.println(profile);
+        //Profile profile = new Profile();
+        //System.out.println(profile);
         //profile.addProfile();
         list = Profile.getListProfile();
         System.out.println("List = " + list);
