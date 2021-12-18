@@ -6,10 +6,7 @@
 package filebackup.model;
 
 import java.io.*;
-import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Random;
+import java.util.*;
 
 /**
  *
@@ -42,15 +39,17 @@ public class Profile implements Serializable{
     
     public Profile (){
         setId();
+        listProfile.add(this);
+        writeListProfile();
     }
     
     public Profile (String name){
-        super();
+        this();
         this.name = name;
     }
     
     public Profile(String name, String origPath, String copyPath) {
-        super();
+        this();
         this.origPath = origPath;
         this.copyPath = copyPath;
     }

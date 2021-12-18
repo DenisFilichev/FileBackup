@@ -30,6 +30,7 @@ public class SelectDir implements ActionListener{
 
     @Override
     public void actionPerformed(ActionEvent e) {
+        profile = new Profile("Denis");
         File file;
         JFileChooser fileChooser = new JFileChooser();
         fileChooser.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
