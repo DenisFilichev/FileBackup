@@ -20,6 +20,7 @@ public class FileBackup {
      */
     public static void main(String[] args) {
         MainFrame mainFrame = new MainFrame();
+        SecondClass secondClass = new SecondClass();
         
         List<Profile> list = Profile.getListProfile();
         Profile profile = new Profile();
@@ -27,6 +28,8 @@ public class FileBackup {
         //profile.addProfile();
         list = Profile.getListProfile();
         System.out.println("List = " + list);
+
+
     }
     
 }
